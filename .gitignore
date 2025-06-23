@@ -1,0 +1,45 @@
+
+node_modules/
+
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# system files
+.DS_Store
+Thumbs.db
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# oS-specific
+*.swp
+*.swo
+
+package-lock.json
+
+# Build artifacts (if you ever compile assets or transpile)
+dist/
+build/
+tmp/
+.cache/
+
+# IDE folders
+.vscode/
+.cursor/
+.idea/
+
+# Coverage reports 
+coverage/
+
+# Express-specific uploads/temp folders 
+uploads/
+tmp/
+
+# Misc
+*.tgz
