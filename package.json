@@ -2,6 +2,7 @@
   "name": "recipe",
   "version": "1.0.0",
   "description": "",
+
   "main": "index.js",
   "scripts": {
     "dev": "nodemon backend/server.js"
@@ -13,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/zaaray/recipe/issues"
   },
