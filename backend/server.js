@@ -1,6 +1,6 @@
 import express from 'express';
 import { connectDB } from './config/db.js';
-
+import { parseRecipeFromUrl } from './parser.js'; 
 
 const app = express();
 
@@ -21,17 +21,19 @@ app.get('/', (req,res)=>{
 })
 
 // RECIPE ROUTES 
-app.post('/recipes/parse', (req,res)=>{
+app.post('/recipes/parse', async (req,res)=>{
     const url = req.body.url;
     // right now this post request is sending a URL string of a recipe website 
     // I don't have any logic to parse the recipe from the website yet 
     // what is the best way to do this?
     // the recipe object cannot create a Recipe model object using the URL string
 
-
-    const recipe = new Recipe(url);
-
-    res.status(201).json(recipe);
+    try {
+        const recipe = await parseRecipeFromUrl(url);
+        res.status(201).json(recipe);
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to parse recipe' });
+    }
 
 
 })
