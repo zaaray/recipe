@@ -1,6 +1,6 @@
 import express from 'express';
 import { connectDB } from './config/db.js';
-import { parseRecipeFromUrl } from './parser.js'; 
+import { parseRecipeFromUrlcl } from './parser.js'; 
 
 const app = express();
 
